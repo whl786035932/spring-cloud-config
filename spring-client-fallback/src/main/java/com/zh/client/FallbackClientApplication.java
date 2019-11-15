@@ -6,7 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 /**
  * @ClassName: FallbackClientApplication
- * @Description: TODO
+ * @Description: 测试github
  * @Author wanghaili
  * @Date 2019/11/15 11:16
  **/
