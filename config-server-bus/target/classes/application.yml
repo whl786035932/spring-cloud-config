@@ -1,0 +1,29 @@
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: http://liuhuanhuan@git.aerohuanyou.com:81/truck-life-cycle/config-files/vmc-config-files.git
+          #the git path for search properties file
+#          search-paths:
+          username: liuhuanhuan
+          password: work@1208
+  application: com.zh.server.config-server
+  rabbitmq:
+    host: 192.168.134.88
+    port: 5672
+    username: liuhh
+    password: 123qwe
+
+server:
+  port: 8888
+
+#配置消息总线也需要关闭端点的安全校验，health, info, refresh
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always

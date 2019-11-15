@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: http://liuhuanhuan@git.aerohuanyou.com:81/truck-life-cycle/config-files/vmc-config-files.git
+          #the application means the which profile 对应client 的name .就是哪个文件
+          search-paths: '{application}'
+          username: liuhuanhuan
+          password: work@1208
+  application: config-server-placeholder
+
+logging:
+  level:
+    root: debug
+server:
+  port: 8888

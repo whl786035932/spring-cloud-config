@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: spring-client-fallback
+  cloud:
+    config:
+      #回退文件的路径,bootstrap.yml 的加载顺序在application.yml之前，这个才能在config server 拉取不到配置文件 后，
+      #找到本地缓存的配置文件
+      fallbackLocation: C:\\Users\\admin\\Desktop\\vmc-terminal-fallback

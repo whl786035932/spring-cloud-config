@@ -1,0 +1,14 @@
+server:
+  port: 8089
+
+spring:
+  application:
+    name: spring-client-fallback
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    config:
+      label: master
+      uri: http://localhost:8888
+      name: vmc-terminal
+      profile: dev

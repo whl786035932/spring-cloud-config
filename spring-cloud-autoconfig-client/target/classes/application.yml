@@ -1,0 +1,21 @@
+server:
+  port: 9091
+spring:
+  application:
+    name: spring-cloud-autoconfig-client
+  cloud:
+    config:
+      refreshInterval: 10 # 延迟时间，定时刷新时间
+      uri: http://localhost:8888
+      label: master
+      name: vmc-terminal
+      profile: dev
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, refresh
+  endpoint:
+    health:
+      show-details: always

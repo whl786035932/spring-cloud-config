@@ -1,0 +1,35 @@
+server:
+  port: 8089
+spring:
+  application:
+    name: config-client
+
+  #以下配置做好是配置在bootstrap.yml 中，因为bootstrap.yml的加载顺序要优先于application.yml
+  cloud:
+    bus:
+      trace:
+        enabled: true
+    config:
+      label: master
+      #the path for com.zh.server.config server
+      uri: http://localhost:8888
+      # 远程文件的名字
+      name: vmc-terminal
+      #代表哪个分支的文件
+      profile: dev
+      fail-fast: false
+  rabbitmq:
+    host: 192.168.134.88
+    port: 5672
+    username: liuhh
+    password: 123qwe
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+

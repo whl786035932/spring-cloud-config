@@ -1,0 +1,26 @@
+server:
+  port: 9093
+spring:
+  application:
+    name: com.zh.server.config-client
+
+  #以下配置做好是配置在bootstrap.yml 中，因为bootstrap.yml的加载顺序要优先于application.yml
+  cloud:
+    config:
+      label: master
+      #the path for com.zh.server.config server
+      uri: http://localhost:8888
+      # 远程文件的名字
+      name: vmc-terminal
+      #代表哪个分支的文件
+      profile: dev
+
+agement:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, refresh
+  endpoint:
+    health:
+      show-details: always
+

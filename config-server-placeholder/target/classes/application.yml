@@ -1,0 +1,22 @@
+spring:
+  cloud:
+    config:
+      allow-override: true
+      #当allow-override 为true时，override-none设置为true, 外部的的配置优先级更低， 而且不能覆盖任何存在的属性源。默认为false
+      override-none: true
+      #标识外部配置是否能够覆盖系统属性， 默认为true
+      override-system-properties: false
+      server:
+        git:
+          uri: http://liuhuanhuan@git.aerohuanyou.com:81/truck-life-cycle/config-files/vmc-config-files.git
+          #the application means the which profile 对应client 的name .就是哪个文件
+          search-paths: '{application}'
+          username: liuhuanhuan
+          password: work@1208
+  application: config-server-placeholder
+
+logging:
+  level:
+    root: debug
+server:
+  port: 8888

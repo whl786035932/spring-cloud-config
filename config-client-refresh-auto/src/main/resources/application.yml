@@ -1,0 +1,35 @@
+server:
+  port: 9093
+spring:
+  application:
+    name: com.zh.server.config-client
+
+  #以下配置做好是配置在bootstrap.yml 中，因为bootstrap.yml的加载顺序要优先于application.yml
+  cloud:
+    config:
+      label: master
+      #the path for com.zh.server.config server
+      uri: http://localhost:8888
+      # 远程文件的名字
+      name: vmc-terminal
+      #代表哪个分支的文件
+      profile: dev
+
+      #自动刷新的时间间隔
+      refreshInterval: 60
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, refresh
+  endpoint:
+    health:
+      show-details: always
+
+#  逆地理位置分析
+opentsp:
+  gis:
+    inverse:
+      url: http://webdriver.mapbar.com/opentsp/gis/api/inverse?lon={lon}&lat={lat}&ak=e856280f5a254da4a220eb594fdf01f6&zoom=10&detail=0
+

@@ -1,0 +1,19 @@
+server:
+  port: 9100
+spring:
+  application:
+    name: config-client-placeholder
+  cloud:
+    config:
+      label: master
+      uri: http://localhost:8888
+      name: vmc-terminal
+      profile: dev
+
+
+
+opentsp:
+  gis:
+    inverse:
+      url: http://whl.mapbar.com/opentsp/gis/api/inverse?lon={lon}&lat={lat}&ak=e856280f5a254da4a220eb594fdf01f6&zoom=10&detail=0
+
